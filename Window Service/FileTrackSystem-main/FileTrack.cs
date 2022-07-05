@@ -30,11 +30,13 @@ namespace SimpleService
 
                 string sourceFile = "";
                 string destinationFolderName = "";
+                string mailTo = "";
                 foreach (UserClass stobj in st)
                 {
 
                     sourceFile = stobj.source.ToString();
                     destinationFolderName = stobj.destination.ToString();
+                    mailTo=stobj.MailTo.ToString();
 
                 }
 
@@ -120,20 +122,20 @@ namespace SimpleService
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri("https://localhost:44395/api/");
-                    var mail = new MailModel() { ToEmail = "xyz@abc.com",Subject="ferfgerf", Body = File.ReadAllText(@"C:\Users\thinksysuser\Desktop\Data\NewData\Combine\allfiles.txt") };
-                    using (var context = new ApplicationDbContext())
-                    {
-                        LogMail log = new LogMail { ToEmail = mail.ToEmail,Subject=mail.Subject, Date = DateTime.Now, Time = DateTime.Now.TimeOfDay };
-                        context.LogEmails1.Add(log);
-                        context.SaveChanges();
-                    }
+                    var mail = new MailModel() { ToEmail = mailTo,Subject="here is a random subject", Body = File.ReadAllText(@"C:\Users\thinksysuser\Desktop\Data\NewData\Combine\allfiles.txt") };
+              
                     var postTask = client.PostAsJsonAsync<MailModel>("mail/send", mail);
                     postTask.Wait();
 
                     var result = postTask.Result;
                     if (result.IsSuccessStatusCode)
                     {
-                      
+                        using (var context = new ApplicationDbContext())
+                        {
+                            LogMail log = new LogMail { ToEmail = mail.ToEmail, Subject = mail.Subject, Date = DateTime.Now, Time = DateTime.Now.TimeOfDay };
+                            context.LogEmails1.Add(log);
+                            context.SaveChanges();
+                        }
                         Console.WriteLine("suceess");
                     }
                     else
