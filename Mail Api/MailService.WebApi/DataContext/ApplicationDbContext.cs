@@ -9,8 +9,6 @@ namespace MailService.WebApi.DataContext
         {
             optionsBuilder.UseSqlServer(@"Data Source=CPU-0191; Initial Catalog=config;Trusted_Connection=True");
         }
-        public DbSet<Mail> path { get; set; }
-
-        public DbSet<User> users { get; set; }  
+   
     }
 }

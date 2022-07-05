@@ -9022,11 +9022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thinksysuser\\Desktop\\MailService.WebApi\\MailService.WebApi\\MailService.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Mail Api\\MailService.WebApi\\MailService.WebApi.csproj",
       "projectName": "MailService.WebApi",
-      "projectPath": "C:\\Users\\thinksysuser\\Desktop\\MailService.WebApi\\MailService.WebApi\\MailService.WebApi.csproj",
+      "projectPath": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Mail Api\\MailService.WebApi\\MailService.WebApi.csproj",
       "packagesPath": "C:\\Users\\thinksysuser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thinksysuser\\Desktop\\MailService.WebApi\\MailService.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Mail Api\\MailService.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thinksysuser\\AppData\\Roaming\\NuGet\\NuGet.Config",

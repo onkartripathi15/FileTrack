@@ -1,7 +1,9 @@
-﻿using System;
+﻿using FileTrackService;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Timers;
 
@@ -13,7 +15,7 @@ namespace SimpleService
         private readonly Timer _timer;
         public FileTrack()
         {
-            _timer = new Timer(5000) { AutoReset = true };   //it will check folder after every 1 sec if any new file is added
+            _timer = new Timer(5000) { AutoReset = true };   //it will check folder after every 5 sec if any new file is added
 
             _timer.Elapsed += TimerElapsed;
         }
@@ -35,6 +37,8 @@ namespace SimpleService
                     destinationFolderName = stobj.destination.ToString();
 
                 }
+
+
 
                 //    string sourceFile = @"C:\Users\thinksysuser\Desktop\Data\OldData";  
                 //string destinationFolderName = @"C:\Users\thinksysuser\Desktop\Data\NewData\";
@@ -74,6 +78,7 @@ namespace SimpleService
 
 
                         }
+                 
                     }
 
 
@@ -104,11 +109,38 @@ namespace SimpleService
 
                             }
                         }
+                   
 
 
 
                         fileCount = fileCount - 25;
                     }
+                }
+                //httpost
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://localhost:44395/api/");
+                    var mail = new MailModel() { ToEmail = "xyz@abc.com",Subject="ferfgerf", Body = File.ReadAllText(@"C:\Users\thinksysuser\Desktop\Data\NewData\Combine\allfiles.txt") };
+                    using (var context = new ApplicationDbContext())
+                    {
+                        LogMail log = new LogMail { ToEmail = mail.ToEmail,Subject=mail.Subject, Date = DateTime.Now, Time = DateTime.Now.TimeOfDay };
+                        context.LogEmails1.Add(log);
+                        context.SaveChanges();
+                    }
+                    var postTask = client.PostAsJsonAsync<MailModel>("mail/send", mail);
+                    postTask.Wait();
+
+                    var result = postTask.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                      
+                        Console.WriteLine("suceess");
+                    }
+                    else
+                    {
+                        Console.WriteLine(result.StatusCode);
+                    }
+
                 }
 
             }

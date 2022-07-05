@@ -7,6 +7,7 @@ namespace SimpleService
     {
         static void Main(string[] args)
         {
+
           var exitCode =HostFactory.Run(x=>
           {
               x.Service<FileTrack>(s=>

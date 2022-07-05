@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rAMlDTTOiW9aM+7WK/RsEf72j2oTNFN9FHh7yPBvUntzGKCgqfWC2v03oQGfmaMB9oBVw/n5wlHQ3bNdoBLFkA==",
+  "dgSpecHash": "7WJ9wlVJiAk2ZV/vaheXS0bo7nWD/KS8x9YHP5ez1udfS+sR2cT2aYgKPnPCIHb8BrWnZrTTQUsLObZG5+P1uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thinksysuser\\Desktop\\MailService.WebApi\\MailService.WebApi\\MailService.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Mail Api\\MailService.WebApi\\MailService.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thinksysuser\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\thinksysuser\\.nuget\\packages\\mailkit\\2.8.0\\mailkit.2.8.0.nupkg.sha512",

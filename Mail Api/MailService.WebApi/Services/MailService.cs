@@ -33,14 +33,14 @@ public class MailService : IMailService
   
     public async Task SendEmailAsync(MailRequest mailRequest)
         {
-
+     
             var email = new MimeMessage();
             email.Sender = MailboxAddress.Parse(_mailSettings.Mail);
             email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
+
             email.Subject = mailRequest.Subject;
-            string text = File.ReadAllText(@"C:\Users\thinksysuser\Desktop\Data\OldData");
             var builder = new BodyBuilder();
-            builder.TextBody = text;
+            builder.TextBody = mailRequest.Body;
             email.Body = builder.ToMessageBody();
             using var smtp = new SmtpClient();
             smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTls);

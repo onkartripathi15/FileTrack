@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thinksysuser\\Desktop\\MyProjects\\SimpleService\\FileTrackService.csproj": {}
+    "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Window Service\\FileTrackSystem-main\\FileTrackService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thinksysuser\\Desktop\\MyProjects\\SimpleService\\FileTrackService.csproj": {
+    "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Window Service\\FileTrackSystem-main\\FileTrackService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thinksysuser\\Desktop\\MyProjects\\SimpleService\\FileTrackService.csproj",
+        "projectUniqueName": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Window Service\\FileTrackSystem-main\\FileTrackService.csproj",
         "projectName": "FileTrackService",
-        "projectPath": "C:\\Users\\thinksysuser\\Desktop\\MyProjects\\SimpleService\\FileTrackService.csproj",
+        "projectPath": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Window Service\\FileTrackSystem-main\\FileTrackService.csproj",
         "packagesPath": "C:\\Users\\thinksysuser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thinksysuser\\Desktop\\MyProjects\\SimpleService\\obj\\",
+        "outputPath": "C:\\Users\\thinksysuser\\Desktop\\FileTrackSystem\\Window Service\\FileTrackSystem-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thinksysuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.4, )"
