@@ -26,7 +26,7 @@ namespace SimpleService
             using (var results = new ApplicationDbContext())
             {
                 int k = 0;
-                var st = results.UserPath.ToList();
+                var st = results.UserPath3.ToList();
 
                 string sourceFile = "";
                 string destinationFolderName = "";
